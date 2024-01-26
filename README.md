@@ -1,1 +1,3 @@
-# node-project-mockservice-git
+# node-project-mockservice-gic
+
+# Proyecto node.js para mockdervice
