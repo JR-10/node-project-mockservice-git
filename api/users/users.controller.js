@@ -1,15 +1,16 @@
-const data = require("./data/data");
+const data = require("./data/data-users");
 
-class productsController {
-  static listProducts(req, res) {
+class usersController {
+  static listUsers(req, res) {
+  
     // Response 200
     res.status(200).json({
       status: 200,
       message: "Successful",
-      data: data.products,
-      totalElements: data.products.length,
+      data: data.users,
+      totalElements: data.users.length,
     });
-
+  
     // // Response 500
     // res.status(500).json({
     //   status: 500,
@@ -17,7 +18,7 @@ class productsController {
     // });
   }
 
-  static getProductParameters(req, res) {
+  static getUserParameters(req, res) {
     const query = req.query;
 
     const filterData = (data, query) =>
@@ -25,8 +26,8 @@ class productsController {
         Object.entries(query).every(([k, v]) => rec[k].toString().includes(v))
       );
 
-    const resultData = filterData(data.products, query);
-    
+    const resultData = filterData(data.users, query);
+
     // Response 200
     res.status(200).json({
       status: 200,
@@ -34,13 +35,13 @@ class productsController {
       data: resultData,
       totalElements: resultData.length,
     });
-
-       // // Response 500
+  
+    // // Response 500
     // res.status(500).json({
     //   status: 500,
     //   message: "Error 500",
-    // }); 
+    // });
   }
 }
 
-export default productsController;
+export default usersController;
