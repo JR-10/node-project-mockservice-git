@@ -5,7 +5,7 @@ import RolesController from "./roles.controller";
 const RoutesRoles = new Router();
 
 
-RoutesRoles.get("/all", RolesController.listRol);
+RoutesRoles.get("", RolesController.listRol);
 RoutesRoles.get("/parameters", RolesController.getRolParameters);
 
 

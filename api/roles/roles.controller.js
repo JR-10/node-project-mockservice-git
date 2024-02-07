@@ -1,13 +1,28 @@
-const data = require("./data/data-roles");
+const dataRoles = require("./data/data-roles");
 
 class rolesController {
   static listRol(req, res) {
+
+
+    const paginationSize = req.query.paginationSize || 10;
+    const paginationKey = req.query.paginationKey || 0;
+
+    const start = paginationSize * paginationKey;
+    const end = Number(start) + Number(paginationSize);
+
+    const data = dataRoles.roles.slice(start, end);
+
+    const totalData = dataRoles.roles.length;
+    const pagesSize = totalData / paginationSize;
     // Response 200
     res.status(200).json({
       status: 200,
       message: "Successful",
-      data: data.roles,
-      totalElements: data.roles.length,
+      data: data,
+      pagination: {
+        totalPages: pagesSize,
+        totalElements: totalData,
+      },
     });
 
     // // Response 500
