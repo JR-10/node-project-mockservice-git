@@ -1,4 +1,5 @@
 import express from "express";
+import bodyParser from 'body-parser';
 
 import RoutesProducts from "./api/products/products.routes";
 import RoutesUsers from "./api/users/users.routes";
@@ -8,6 +9,10 @@ import RoutesStates from "./api/states/states.routes";
 
 
 const app = express();
+
+// Peticiones con Body
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 // Permitir llamados CROSS
 app.use(function(req, res, next) {
@@ -27,6 +32,8 @@ app.use(function(req, res, next) {
         next();
     }
 });
+
+
 
 
 app.get("/", (req, res) =>

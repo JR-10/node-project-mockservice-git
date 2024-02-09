@@ -65,7 +65,7 @@ const response = {
       email: "mateo@cenit.com",
       fullName: "Mateo Jaramillo",
       idRole: 107,
-      nameRole: "Administrador calidad",
+      nameRole: "Super administrador",
       idState: 1002,
       nameState: "Inactivo",
       creationDate: "2024-01-25 11:29:21"
