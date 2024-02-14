@@ -5,7 +5,8 @@ import usersController from "./users.controller";
 const RoutesUsers = new Router();
 
 
-RoutesUsers.get("/all", usersController.allUsers);
+RoutesUsers.post("/allUsers", usersController.allUsers);
+RoutesUsers.get("/all", usersController.getAllUsers);
 RoutesUsers.get("/parameters", usersController.usersParameters);
 RoutesUsers.get("/ById", usersController.userById);
 

@@ -3,58 +3,127 @@ const dataRoles = require("./data/data-roles");
 class rolesController {
   static listRol(req, res) {
 
+    const queryParamsRoles = {
+      idRole: req.query.idRole,
+      idState: req.query.idState,
+      idModule: req.query.idState != '' ? req.query.idModule : '',
+      startDate: req.query.startDate,
+      endDate: req.query.endDate,
+    };
 
-    const paginationSize = req.query.paginationSize || 10;
-    const paginationKey = req.query.paginationKey || 0;
+    for (const i in queryParamsRoles) {
+      if (queryParamsRoles[i] === '') {
+        delete queryParamsRoles[i];
+      }
+    }
 
-    const start = paginationSize * paginationKey;
-    const end = Number(start) + Number(paginationSize);
+    if (Object.keys(req.query).length === 0) {
+      // Response 200
+      res.status(200).json({
+        status: 200,
+        message: "Successful",
+        data: dataRoles.roles,
+        totalElements: dataRoles.roles.length,
+      });
 
-    const data = dataRoles.roles.slice(start, end);
+      // // Response 500
+      // res.status(500).json({
+      //   status: 500,
+      //   message: "Error 500",
+      // });
+    } else {
+      const filterData = (data, query) =>
+        data.filter((rec) =>
+          Object.entries(query).every(([k, v]) => rec[k].toString().includes(v))
+        );
+      const resultData = filterData(dataRoles.roles, queryParamsRoles);
 
-    const totalData = dataRoles.roles.length;
-    const pagesSize = totalData / paginationSize;
-    // Response 200
-    res.status(200).json({
-      status: 200,
-      message: "Successful",
-      data: data,
-      pagination: {
-        totalPages: pagesSize,
-        totalElements: totalData,
-      },
-    });
+      // Response 200
+      res.status(200).json({
+        status: 200,
+        message: "Successful",
+        data: resultData,
+        totalElements: resultData.length,
+      });
 
-    // // Response 500
-    // res.status(500).json({
-    //   status: 500,
-    //   message: "Error 500",
-    // });
+      // // Response 500
+      // res.status(500).json({
+      //   status: 500,
+      //   message: "Error 500",
+      // });
+    }
   }
 
   static getRolParameters(req, res) {
-    const query = req.query;
+    const queryParamsRoles = {
+      idRole: req.query.idRole,
+      idState: req.query.idState,
+      startDate: req.query.startDate,
+      endDate: req.query.endDate,
+    };
 
-    const filterData = (data, query) =>
-      data.filter((rec) =>
-        Object.entries(query).every(([k, v]) => rec[k].toString().includes(v))
-      );
+    for (const i in queryParamsRoles) {
+      if (queryParamsRoles[i] === undefined) {
+        delete queryParamsRoles[i];
+      }
+    }
 
-    const resultData = filterData(data.roles, query);
+    if (Object.keys(queryParamsRoles).length === 0) {
+      const paginationSize = req.query.paginationSize || 10;
+      const paginationKey = req.query.paginationKey || 0;
+      const start = paginationSize * paginationKey;
+      const end = Number(start) + Number(paginationSize);
+      const data = dataRoles.roles.slice(start, end);
+      const totalData = dataRoles.roles.length;
+      const pagesSize = totalData / paginationSize;
 
-    // Response 200
-    res.status(200).json({
-      status: 200,
-      message: "Successful",
-      data: resultData,
-      totalElements: resultData.length,
-    });
-  
-    // // Response 500
-    // res.status(500).json({
-    //   status: 500,
-    //   message: "Error 500",
-    // });
+      // Response 200
+      res.status(200).json({
+        status: 200,
+        message: "Successful",
+        data: data,
+        pagination: {
+          totalPages: pagesSize,
+          totalElements: totalData,
+        },
+      });
+
+      // // Response 500
+      // res.status(500).json({
+      //   status: 500,
+      //   message: "Error 500",
+      // });
+    } else {
+      const filterData = (data, query) =>
+        data.filter((rec) =>
+          Object.entries(query).every(([k, v]) => rec[k].toString().includes(v))
+        );
+      const resultData = filterData(dataRoles.roles, queryParamsRoles);
+      const paginationSize = req.body.paginationSize || 10;
+      const paginationKey = req.body.paginationKey || 0;
+      const start = paginationSize * paginationKey;
+      const end = Number(start) + Number(paginationSize);
+      const data = resultData.slice(start, end);
+      const totalData = resultData.length;
+      const pagesSize = totalData / paginationSize;
+
+      // Response 200
+      res.status(200).json({
+        status: 200,
+        message: "Successful",
+        data: data,
+        pagination: {
+          totalPages: pagesSize,
+          totalElements: totalData,
+        },
+      });
+
+      // // Response 500
+      // res.status(500).json({
+      //   status: 500,
+      //   message: "Error 500",
+      // });
+    }
   }
 }
 
