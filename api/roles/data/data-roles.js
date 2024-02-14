@@ -6,6 +6,7 @@ const response = {
       descriptionRole: 'Administrador general del portal',
       idState: 1001,
       nameState: "Activo",
+      idModule: 1,
     },
     {
       idRole: 102,
@@ -13,6 +14,7 @@ const response = {
       descriptionRole: 'Administrador general del portal',
       idState: 1001,
       nameState: "Activo",
+      idModule: 1,
     },
     {
       idRole: 103,
@@ -20,6 +22,7 @@ const response = {
       descriptionRole: 'Rol con poderes modulo de calidad',
       idState: 1001,
       nameState: "Activo",
+      idModule: 1,
     },
     {
       idRole: 104,
@@ -27,6 +30,7 @@ const response = {
       descriptionRole: 'Rol con todos los super poderes',
       idState: 1002,
       nameState: "Inactivo",
+      idModule: 1,
     },
     {
       idRole: 105,
@@ -34,6 +38,7 @@ const response = {
       descriptionRole: 'Usuario normal de calidRolead',
       idState: 1001,
       nameState: "Activo",
+      idModule: 1,
     },
     {
       idRole: 106,
@@ -41,6 +46,7 @@ const response = {
       descriptionRole: 'Rol con poderes modulo de calidRolead',
       idState: 1002,
       nameState: "Inactivo",
+      idModule: 1,
     },
     {
       idRole: 107,
@@ -48,6 +54,7 @@ const response = {
       descriptionRole: 'Rol con todos los super poderes',
       idState: 1002,
       nameState: "Inactivo",
+      idModule: 1,
     },
     {
       idRole: 108,
@@ -55,6 +62,7 @@ const response = {
       descriptionRole: 'Administrador general del portal',
       idState: 1001,
       nameState: "Activo",
+      idModule: 1,
     },
     {
       idRole: 109,
@@ -62,6 +70,7 @@ const response = {
       descriptionRole: 'Administrador general del portal',
       idState: 1002,
       nameState: "Inactivo",
+      idModule: 1,
     },
     {
       idRole: 110,
@@ -69,6 +78,7 @@ const response = {
       descriptionRole: 'Administrador general del portal',
       idState: 1002,
       nameState: "Inactivo",
+      idModule: 1,
     },
     {
       idRole: 111,
@@ -76,6 +86,7 @@ const response = {
       descriptionRole: 'Administrador general del portal',
       idState: 1002,
       nameState: "Inactivo",
+      idModule: 1,
     },
     {
       idRole: 112,
@@ -83,6 +94,7 @@ const response = {
       descriptionRole: 'Administrador general del portal',
       idState: 1001,
       nameState: "Activo",
+      idModule: 1,
     }
   ],
 };
