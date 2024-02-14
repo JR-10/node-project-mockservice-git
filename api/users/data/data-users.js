@@ -248,7 +248,59 @@ const response = {
       nameRole: 'Administrador',
       idState: 1001,
       nameState: 'Activo',
-      creationDate: "2024-01-25 11:29:21"
+      creationDate: "2024-01-25 11:29:21",
+      modules:{
+        administration: true,
+        billing: true,
+        home: true,
+        plans: true,
+        prediction: true,
+        register: true,
+        visualizer: true
+      },
+      modulosIzquierdos:[
+        {
+          idmodulo: "23d758f8-ea9a-4703-b12f-d4b5965d4919",
+          nombre:"Usuarios",
+          estadomodulo: 1,
+          menuhijo: [
+              {
+                "idmodulo": "0d678459-3737-444b-92fa-b0be0012b993",
+                "nombre": "Gestion De Usuarios",
+                "estadomodulo": 1
+              }
+          ]
+        },
+        {
+          idmodulo: "23d758f8-ea9a-4703-b12f-d4b5965d4920",
+          nombre:"Roles y perfiles",
+          estadomodulo: 1,
+          menuhijo: [
+              {
+                "idmodulo": "0d678459-3737-444b-92fa-b0be0012b993",
+                "nombre": "Administrador",
+                "estadomodulo": 1
+              },
+              {
+                "idmodulo": "0d678459-3737-444b-92fa-b0be0012b993",
+                "nombre": "Visualizador",
+                "estadomodulo": 1
+              },
+          ]
+        },
+        {
+          idmodulo: "23d758f8-ea9a-4703-b12f-d4b5965d4919",
+          nombre:"Limites y Alertas",
+          estadomodulo: 1,
+          menuhijo: [
+              {
+                "idmodulo": "0d678459-3737-444b-92fa-b0be0012b993",
+                "nombre": "Histórico de alertas",
+                "estadomodulo": 1
+              }
+          ]
+        }
+      ]
     },
     {
       id: 2026,
