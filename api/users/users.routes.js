@@ -9,6 +9,7 @@ RoutesUsers.post("/allUsers", usersController.allUsers);
 RoutesUsers.get("/all", usersController.getAllUsers);
 RoutesUsers.get("/parameters", usersController.usersParameters);
 RoutesUsers.get("/ById", usersController.userById);
+RoutesUsers.put("/updateUser/:ById", usersController.updateUser);
 
 
 export default RoutesUsers;
