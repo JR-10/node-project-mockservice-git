@@ -18,23 +18,12 @@ class limitsController {
     }
 
     if (Object.keys(queryParamsLimits).length === 0) {
-      const paginationSize = req.query.paginationSize || 10;
-      const paginationKey = req.query.paginationKey || 0;
-      const start = paginationSize * paginationKey;
-      const end = Number(start) + Number(paginationSize);
-      const data = dataLimits.limits.slice(start, end);
-      const totalData = dataLimits.limits.length;
-      const pagesSize = totalData / paginationSize;
-
       // Response 200
       res.status(200).json({
         status: 200,
         message: "Successful",
-        data: data,
-        pagination: {
-          totalPages: pagesSize,
-          totalElements: totalData,
-        },
+        data: dataLimits.limits,
+        totalElements: dataLimits.limits.length,
       });
 
       // // Response 500
@@ -48,23 +37,13 @@ class limitsController {
           Object.entries(query).every(([k, v]) => rec[k].toString().includes(v))
         );
       const resultData = filterData(dataLimits.limits, queryParamsLimits);
-      const paginationSize = req.body.paginationSize || 10;
-      const paginationKey = req.body.paginationKey || 0;
-      const start = paginationSize * paginationKey;
-      const end = Number(start) + Number(paginationSize);
-      const data = resultData.slice(start, end);
-      const totalData = resultData.length;
-      const pagesSize = totalData / paginationSize;
 
       // Response 200
       res.status(200).json({
         status: 200,
         message: "Successful",
-        data: data,
-        pagination: {
-          totalPages: pagesSize,
-          totalElements: totalData,
-        },
+        data: resultData,
+        totalElements: totalData.limits.length,
       });
 
       // // Response 500
