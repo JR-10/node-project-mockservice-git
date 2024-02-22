@@ -1,4 +1,5 @@
 const dataRoles = require("./data/data-roles");
+const dataRolesReport = require("./data/report-data-roles");
 
 class rolesController {
   static listRol(req, res) {
@@ -125,6 +126,69 @@ class rolesController {
       // });
     }
   }
+
+  static createRol(req, res) {
+
+    const bodyCreate = req.body;
+
+    // Response 200
+    res.status(200).json({
+      status: 200,
+      message: "Successful",
+      data: bodyCreate,
+    });
+
+    // // Response 500
+    // res.status(500).json({
+    //   status: 500,
+    //   message: "Error 500",
+    // });
+  }
+
+  static updateRol(req, res) {
+
+    const idRole = Number(req.params.idRole);
+    const bodyUpdate = req.body;
+
+    const userIndex = dataRoles.roles.findIndex((role) => role.idRole === idRole);
+
+    if (userIndex !== -1) {
+      res.json({
+        status: 200,
+        message: "Rol actualizado exitosamente",
+        data: bodyUpdate,
+      });
+    } else {
+      res.status(404).json({
+        status: 404,
+        message: "Rol no encontrado para actualizar",
+      });
+    }
+
+    // // Response 500
+    // res.status(500).json({
+    //   status: 500,
+    //   message: "Error 500",
+    // });
+  }
+
+  static downloadReportRoles(req, res) {
+
+    // Response 200
+    res.status(200).json({
+      status: 200,
+      message: "Successful",
+      data: dataRolesReport.rolesReport,
+      totalElements: dataRolesReport.rolesReport.length,
+    });
+
+    // // Response 500
+    // res.status(500).json({
+    //   status: 500,
+    //   message: "Error 500",
+    // });
+  }
+
 }
 
 export default rolesController;
