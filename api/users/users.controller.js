@@ -207,21 +207,15 @@ class usersController {
     const idUser = Number(req.params.ById); // Id del usuario a actualizar;
     const bodyUpdate = req.body;
 
-    console.log("Id del usuario a actualizar:", idUser);
-    console.log("Datos recibidos para actualización:", bodyUpdate);
-
     const userIndex = dataUsers.users.findIndex((user) => user.id === idUser);
-    console.log("userIndex: ", userIndex);
 
     if (userIndex !== -1) {
-      console.log("Usuario encontrado, actualizando datos...");
       res.json({
         status: 200,
         message: "Usuario actualizado exitosamente",
         data: bodyUpdate,
       });
     } else {
-      console.log("Usuario no encontrado para idUser:", idUser);
       res.status(404).json({
         status: 404,
         message: "Usuario no encontrado para actualizar",

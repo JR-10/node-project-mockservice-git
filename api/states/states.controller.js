@@ -5,7 +5,7 @@ class statesController {
     // Response 200
     res.status(200).json({
       status: 200,
-      message: "Successful",
+      message: "Successfull",
       data: dataStates.states,
       totalElements: dataStates.states.length,
     });
