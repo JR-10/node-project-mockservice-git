@@ -2,8 +2,14 @@ const response = {
   users: [
     {
       id: 2001,
+      userType: "Usuario Cenit",
+      documentType: "Cedula de Ciudadanía",
+      documentNumber: "1.078.345",
       email: "marcela@cenit.com",
       fullName: "Marcela Rodriguez",
+      company: 'Empresa 1',
+      job: 'Data Administrator',
+      jobDescription: 'Administrar datos de usuario', 
       idRole: 101,
       nameRole: 'Administrador',
       idState: 1001,
