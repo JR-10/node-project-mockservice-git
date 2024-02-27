@@ -13,7 +13,7 @@ const response = {
       idRole: 101,
       nameRole: 'Administrador',
       idState: 1001,
-      nameState: 'Inactivo',
+      nameState: 'Activo',
       creationDate: "2024-01-25 11:29:21"
     },
     {

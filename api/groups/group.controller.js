@@ -82,8 +82,7 @@ class groupController{
 
   static getAllGroups(req, res) {
     const queryParams = {
-        name: req.body.name,
-        description: req.body.description,
+        idGroup: req.body.idGroup,
         idState: req.body.idState,
         startDate: req.body.startDate,
         endDate: req.body.endDate,
@@ -125,7 +124,7 @@ class groupController{
         data.filter((rec) =>
           Object.entries(query).every(([k, v]) => rec[k].toString().includes(v))
         );
-      const resultData = filterData(dataGroups.users, queryParams);
+      const resultData = filterData(dataGroups.groups, queryParams);
       const paginationSize = req.query.paginationSize || 10;
       const paginationKey = req.query.paginationKey || 0;
       const start = paginationSize * paginationKey;
@@ -151,6 +150,135 @@ class groupController{
       //   message: "Error 500",
       // });
     }
+  }
+
+  static groupById(req, res) {
+    // id del usuario a consultar
+    const idGroup = req.query;
+
+    const filterData = (data, query) =>
+      data.filter((rec) =>
+        Object.entries(query).every(([k, v]) => rec[k].toString().includes(v))
+      );
+
+    const resultData = filterData(dataGroups.groups, idGroup);
+
+    // Response 200
+    res.status(200).json({
+      status: 200,
+      message: "Successful",
+      data: resultData,
+      totalElements: resultData.length,
+    });
+
+    // // Response 500
+    // res.status(500).json({
+    //   status: 500,
+    //   message: "Error 500",
+    // });
+  }
+
+  static groupByIdState(req, res) {
+    // id del usuario a consultar
+    const idState = req.query;
+
+    const filterData = (data, query) =>
+      data.filter((rec) =>
+        Object.entries(query).every(([k, v]) => rec[k].toString().includes(v))
+      );
+
+    const resultData = filterData(dataGroups.groups, idState);
+
+    // Response 200
+    res.status(200).json({
+      status: 200,
+      message: "Successful",
+      data: resultData,
+      totalElements: resultData.length,
+    });
+
+    // // Response 500
+    // res.status(500).json({
+    //   status: 500,
+    //   message: "Error 500",
+    // });
+  }
+
+  static groupsByStartDate(req, res) {
+    const startDate = req.query;
+      
+
+    const filterData = (data, query) =>
+      data.filter((rec) =>
+        Object.entries(query).every(([k, v]) => rec[k].toString().includes(v))
+      );
+
+    const resultData = filterData(dataGroups.groups, startDate);
+
+    // Response 200
+    res.status(200).json({
+      status: 200,
+      message: "Successful",
+      data: resultData,
+      totalElements: resultData.length,
+    });
+
+    // // Response 500
+    // res.status(500).json({
+    //   status: 500,
+    //   message: "Error 500",
+    // });
+  }
+
+  static groupsByEndDate(req, res) {
+    
+    const endDate = req.query;
+
+    const filterData = (data, query) =>
+      data.filter((rec) =>
+        Object.entries(query).every(([k, v]) => rec[k].toString().includes(v))
+      );
+
+    const resultData = filterData(dataGroups.groups, endDate);
+
+    // Response 200
+    res.status(200).json({
+      status: 200,
+      message: "Successful",
+      data: resultData,
+      totalElements: resultData.length,
+    });
+
+    // // Response 500
+    // res.status(500).json({
+    //   status: 500,
+    //   message: "Error 500",
+    // });
+  }
+
+  static groupsParameters(req, res) {
+    const query = req.query;
+    
+    const filterData = (data, query) =>
+      data.filter((rec) =>
+        Object.entries(query).every(([k, v]) => rec[k].toString().includes(v))
+      );
+
+    const resultData = filterData(dataGroups.groups, query);
+
+    // Response 200
+    res.status(200).json({
+      status: 200,
+      message: "Successful",
+      data: resultData,
+      totalElements: resultData.length,
+    });
+
+    // // Response 500
+    // res.status(500).json({
+    //   status: 500,
+    //   message: "Error 500",
+    // });
   }
 
 }
