@@ -135,7 +135,7 @@ class rolesController {
     res.status(200).json({
       status: 200,
       message: "Successful",
-      data: bodyCreate,
+      data: true,
     });
 
     // // Response 500
@@ -156,7 +156,7 @@ class rolesController {
       res.json({
         status: 200,
         message: "Rol actualizado exitosamente",
-        data: bodyUpdate,
+        data: true,
       });
     } else {
       res.status(404).json({
