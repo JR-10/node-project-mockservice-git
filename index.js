@@ -7,7 +7,7 @@ import RoutesDownloadUsers from "./api/download-users/download-users.routes";
 import RoutesRoles from "./api/roles/roles.routes";
 import RoutesStates from "./api/states/states.routes";
 import RoutesLimits from "./api/limits/limits.routes";
-
+import RoutesGroups from "./api/groups/groups.routes";
 
 const app = express();
 
@@ -48,6 +48,7 @@ app.use("/gic/reportUsers", RoutesDownloadUsers);
 app.use("/gic/roles", RoutesRoles);
 app.use("/gic/states", RoutesStates);
 app.use("/gic/limits", RoutesLimits);
+app.use("/gic/groups", RoutesGroups);
 
 // definicion del puerto
 const server = app.listen(process.env.PORT || 3040, () => {
