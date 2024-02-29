@@ -1,5 +1,6 @@
 const dataRoles = require("./data/data-roles");
 const dataRolesReport = require("./data/report-data-roles");
+const dataFuncionalities = require("./data/data-funcionalities");
 
 class rolesController {
   static listRol(req, res) {
@@ -135,7 +136,7 @@ class rolesController {
     res.status(200).json({
       status: 200,
       message: "Successful",
-      data: bodyCreate,
+      data: true,
     });
 
     // // Response 500
@@ -156,7 +157,7 @@ class rolesController {
       res.json({
         status: 200,
         message: "Rol actualizado exitosamente",
-        data: bodyUpdate,
+        data: true,
       });
     } else {
       res.status(404).json({
@@ -180,6 +181,45 @@ class rolesController {
       message: "Successful",
       data: dataRolesReport.rolesReport,
       totalElements: dataRolesReport.rolesReport.length,
+    });
+
+    // // Response 500
+    // res.status(500).json({
+    //   status: 500,
+    //   message: "Error 500",
+    // });
+  }
+
+
+  static getFuncionalities(req, res) {
+
+    // Response 200
+    res.status(200).json({
+      status: 200,
+      message: "Successful",
+      data: dataFuncionalities.funcionalities,
+      totalElements: dataFuncionalities.funcionalities.length,
+    });
+
+    // // Response 500
+    // res.status(500).json({
+    //   status: 500,
+    //   message: "Error 500",
+    // });
+  }
+
+
+  static updateFuncionalitiesRol(req, res) {
+
+    const idRole = Number(req.params.idRole);
+    const bodyUpdate = req.body;
+
+    console.log('valor del role id capturado: ', idRole);
+
+    res.status(200).json({
+      status: 200,
+      message: "Successful",
+      data: true,
     });
 
     // // Response 500
