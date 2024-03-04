@@ -183,7 +183,7 @@ class rolesController {
       totalElements: dataRolesReport.rolesReport.length,
     });
 
-    // // Response 500
+    // Response 500
     // res.status(500).json({
     //   status: 500,
     //   message: "Error 500",
@@ -201,7 +201,7 @@ class rolesController {
       totalElements: dataFuncionalities.funcionalities.length,
     });
 
-    // // Response 500
+    // Response 500
     // res.status(500).json({
     //   status: 500,
     //   message: "Error 500",
@@ -212,9 +212,7 @@ class rolesController {
   static updateFuncionalitiesRol(req, res) {
 
     const idRole = Number(req.params.idRole);
-    const bodyUpdate = req.body;
-
-    console.log('valor del role id capturado: ', idRole);
+    const bodyUpdateFuncionalities = req.body;
 
     res.status(200).json({
       status: 200,

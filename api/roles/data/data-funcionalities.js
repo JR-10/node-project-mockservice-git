@@ -3,12 +3,12 @@ const response = {
     {
       idFuncionality: 1501,
       nameFuncionality: "Visualizador del Submódulo de Usuarios",
-      assigned: false,
+      assigned: true,
     },
     {
       idFuncionality: 1502,
       nameFuncionality: "Registrador del Submódulo de Usuarios",
-      assigned: false,
+      assigned: true,
     },
     {
       idFuncionality: 1503,
