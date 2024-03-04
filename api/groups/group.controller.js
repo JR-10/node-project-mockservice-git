@@ -281,6 +281,51 @@ class groupController{
     // });
   }
 
+  static createGroup(req, res) {
+
+    const bodyCreate = req.body;
+
+    // Response 200
+    res.status(200).json({
+      status: 200,
+      message: "Successful",
+      data: true,
+    });
+
+    // // Response 500
+    // res.status(500).json({
+    //   status: 500,
+    //   message: "Error 500",
+    // });
+  }
+
+  static updateGroup(req, res) {
+
+    const idGroup = Number(req.params.idGroup);
+    const bodyUpdate = req.body;
+
+    const userIndex = dataGroups.groups.findIndex((group) => group.idGroup === idGroup);
+
+    if (userIndex !== -1) {
+      res.json({
+        status: 200,
+        message: "Grupo actualizado exitosamente",
+        data: true,
+      });
+    } else {
+      res.status(404).json({
+        status: 404,
+        message: "Grupo no encontrado para actualizar",
+      });
+    }
+
+    // // Response 500
+    // res.status(500).json({
+    //   status: 500,
+    //   message: "Error 500",
+    // });
+  }
+
 }
 
 export default groupController;
