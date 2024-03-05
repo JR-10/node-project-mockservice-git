@@ -15,7 +15,7 @@ RoutesGroups.get("/ByidState", groupController.groupByIdState);
 RoutesGroups.get("/ByStartDate", groupController.groupsByStartDate);
 RoutesGroups.get("/ByEndDate", groupController.groupsByEndDate);
 RoutesGroups.get("/usersGroup", groupController.getUsers);
-//RoutesGroups.put("/updateGroup/:ById", groupController.updateGroup);
+RoutesGroups.put("/updateUsersGroup/:idGroup", groupController.updateUsersGroup);
 
 
 export default RoutesGroups;

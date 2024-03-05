@@ -345,8 +345,23 @@ class groupController{
     // });
   }
 
+  static updateUsersGroup(req, res) {
 
-  
+    const idGroup = Number(req.params.idGroup);
+    const bodyUpdateUsers = req.body;
+
+    res.status(200).json({
+      status: 200,
+      message: "Successful",
+      data: true,
+    });
+
+    // // Response 500
+    // res.status(500).json({
+    //   status: 500,
+    //   message: "Error 500",
+    // });
+  }  
 
 }
 
