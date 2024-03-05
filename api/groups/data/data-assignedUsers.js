@@ -1,5 +1,5 @@
 const response = {
-    assignedFuncionalities: [
+    assignedUsers: [
       {
         idGroup: 101,
         idUser: 1501,
