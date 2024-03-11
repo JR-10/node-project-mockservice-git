@@ -29,13 +29,13 @@ class plantsProductsController {
 
   static getProducts(req, res) {
 
-    let arrayUuid = [];
-    for (let i = 0; i < 12; i++) {
-      const guid = uuidv4();
-      console.log('valor de guid: ', guid);
-      arrayUuid.push(guid);
-    }
-    console.log('valor de arrayUuid: ', arrayUuid);
+    // let arrayUuid = [];
+    // for (let i = 0; i < 30; i++) {
+    //   const guid = uuidv4();
+    //   console.log('valor de guid: ', guid);
+    //   arrayUuid.push(guid);
+    // }
+    // console.log('valor de arrayUuid: ', arrayUuid);
 
 
     // Response 200

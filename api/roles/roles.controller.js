@@ -148,8 +148,10 @@ class rolesController {
 
   static updateRol(req, res) {
 
-    const idRole = Number(req.params.idRole);
+    const idRole = req.params.idRole;
     const bodyUpdate = req.body;
+
+    console.log('@@@@', idRole);
 
     const userIndex = dataRoles.roles.findIndex((role) => role.idRole === idRole);
 
