@@ -1,4 +1,5 @@
 const dataGroups = require("./data/data-groups");
+const dataUsers = require("./data/data-users");
 
 class groupController{
 
@@ -325,6 +326,42 @@ class groupController{
     //   message: "Error 500",
     // });
   }
+
+
+  static getUsers(req, res) {
+
+    // Response 200
+    res.status(200).json({
+      status: 200,
+      message: "Successful",
+      data: dataUsers.users,
+      totalElements: dataUsers.users.length,
+    });
+
+    // Response 500
+    // res.status(500).json({
+    //   status: 500,
+    //   message: "Error 500",
+    // });
+  }
+
+  static updateUsersGroup(req, res) {
+
+    const idGroup = Number(req.params.idGroup);
+    const bodyUpdateUsers = req.body;
+
+    res.status(200).json({
+      status: 200,
+      message: "Successful",
+      data: true,
+    });
+
+    // // Response 500
+    // res.status(500).json({
+    //   status: 500,
+    //   message: "Error 500",
+    // });
+  }  
 
 }
 
