@@ -1,4 +1,5 @@
 const dataUsers = require("./data/data-users");
+const dataImportUsers = require("./data/data-import-users");
 
 class usersController {
   /**
@@ -8,6 +9,7 @@ class usersController {
    */
   static allUsers(req, res) {
     const bodyQuery = {
+      nameUser: req.body.nameUser,
       fullName: req.body.name,
       idRole: req.body.idRole,
       idState: req.body.idState,
@@ -81,6 +83,7 @@ class usersController {
 
   static getAllUsers(req, res) {
     const queryParams = {
+      // nameUser: req.query.nameUser,
       fullName: req.query.fullName,
       idRole: req.query.idRole,
       idState: req.query.idState,
@@ -95,6 +98,7 @@ class usersController {
     }
 
     if (Object.keys(queryParams).length === 0) {
+      console.log('entra al if')
       const paginationSize = req.query.paginationSize || 10;
       const paginationKey = req.query.paginationKey || 0;
       const start = paginationSize * paginationKey;
@@ -120,6 +124,7 @@ class usersController {
       //   message: "Error 500",
       // });
     } else {
+      console.log('entra al else')
       const filterData = (data, query) =>
         data.filter((rec) =>
           Object.entries(query).every(([k, v]) => rec[k].toString().includes(v))
@@ -154,6 +159,7 @@ class usersController {
 
   static usersParameters(req, res) {
     const query = req.query;
+    console.log('####:', query);
 
     const filterData = (data, query) =>
       data.filter((rec) =>
@@ -221,6 +227,46 @@ class usersController {
         message: "Usuario no encontrado para actualizar",
       });
     }
+  }
+
+
+  static getUsersImport(req, res) {
+
+    const parameterQuery = req.query;
+    console.log('Parametros de consulta:', parameterQuery);
+
+    // Response 200
+    res.status(200).json({
+      status: 200,
+      message: "Successful",
+      data: dataImportUsers.importUsers,
+      totalElements: dataImportUsers.importUsers.length,
+    });
+
+    // // Response 500
+    // res.status(500).json({
+    //   status: 500,
+    //   message: "Error 500",
+    // });
+  }
+
+  static saveUsersImport(req, res) {
+
+    const parameterBody = req.body;
+    console.log('Parametros de Creacion:', parameterBody);
+
+    // Response 200
+    res.status(200).json({
+      status: 200,
+      message: "Successful",
+      data: true,
+    });
+
+    // // Response 500
+    // res.status(500).json({
+    //   status: 500,
+    //   message: "Error 500",
+    // });
   }
 }
 

@@ -18,7 +18,7 @@ class statesController {
   }
 
   static rolesByIdModule(req, res) {
-    const idModule = Number(req.query.idModule); // Id del modulo a consultar
+    const idModule = req.query.idModule; // Id del modulo a consultar
     const userIndex = dataStates.states.findIndex((state) => state.idModule === idModule);
 
     if (userIndex !== -1) {

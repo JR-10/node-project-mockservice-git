@@ -1,4 +1,4 @@
-// import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 const dataProducts = require("./data/data-products");
 const dataTypeProducts = require("./data/data-type-products");
@@ -30,7 +30,7 @@ class plantsProductsController {
   static getProducts(req, res) {
 
     // let arrayUuid = [];
-    // for (let i = 0; i < 10; i++) {
+    // for (let i = 0; i < 30; i++) {
     //   const guid = uuidv4();
     //   console.log('valor de guid: ', guid);
     //   arrayUuid.push(guid);
