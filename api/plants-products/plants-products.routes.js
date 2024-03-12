@@ -9,5 +9,11 @@ RoutesPlantsProducts.post("/createPlantsProducts", PlantsProductsController.crea
 RoutesPlantsProducts.get("/products", PlantsProductsController.getProducts);
 RoutesPlantsProducts.get("/typeProducts", PlantsProductsController.getTypeProducts);
 
-
+RoutesPlantsProducts.get("/all", PlantsProductsController.getAllGroups);
+RoutesPlantsProducts.get("/ById", PlantsProductsController.plantProductById);
+RoutesPlantsProducts.get("/productById", PlantsProductsController.productById);
+RoutesPlantsProducts.get("/typeProductById", PlantsProductsController.typeProductById);
+RoutesPlantsProducts.get("/stateById", PlantsProductsController.stateById);
+RoutesPlantsProducts.get("/startDateById", PlantsProductsController.startDateById);
+RoutesPlantsProducts.get("/endDateById", PlantsProductsController.endDateById);
 export default RoutesPlantsProducts;
