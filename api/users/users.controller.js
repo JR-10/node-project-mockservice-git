@@ -249,6 +249,25 @@ class usersController {
     //   message: "Error 500",
     // });
   }
+
+  static saveUsersImport(req, res) {
+
+    const parameterBody = req.body;
+    console.log('Parametros de Creacion:', parameterBody);
+
+    // Response 200
+    res.status(200).json({
+      status: 200,
+      message: "Successful",
+      data: true,
+    });
+
+    // // Response 500
+    // res.status(500).json({
+    //   status: 500,
+    //   message: "Error 500",
+    // });
+  }
 }
 
 export default usersController;
