@@ -5,21 +5,10 @@ const dataFuncionalities = require("./data/data-funcionalities");
 class rolesController {
   static listRol(req, res) {
 
-    const queryParamsRoles = {
-      idRole: req.query.idRole,
-      idState: req.query.idState,
-      idModule: req.query.idState != '' ? req.query.idModule : '',
-      startDate: req.query.startDate,
-      endDate: req.query.endDate,
-    };
+    const queryParamsRoles = req.query;
+    console.log('valor de los parametros de consulta: ', queryParamsRoles)
 
-    for (const i in queryParamsRoles) {
-      if (queryParamsRoles[i] === '') {
-        delete queryParamsRoles[i];
-      }
-    }
-
-    if (Object.keys(req.query).length === 0) {
+    if (Object.keys(queryParamsRoles).length === 0) {
       // Response 200
       res.status(200).json({
         status: 200,

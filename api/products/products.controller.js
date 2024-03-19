@@ -1,4 +1,4 @@
-const data = require("./data/data");
+const dataProducts = require("./data/data");
 
 class productsController {
   static listProducts(req, res) {
@@ -6,8 +6,8 @@ class productsController {
     res.status(200).json({
       status: 200,
       message: "Successful",
-      data: data.products,
-      totalElements: data.products.length,
+      data: dataProducts.products,
+      totalElements: dataProducts.products.length,
     });
 
     // // Response 500
@@ -18,29 +18,53 @@ class productsController {
   }
 
   static getProductParameters(req, res) {
-    const query = req.query;
+    const queryParams = {
+      idProduct: req.query.idProduct,
+      nameManager: req.query.nameManager,
+      idState: req.query.idState,
+    }
 
-    const filterData = (data, query) =>
-      data.filter((rec) =>
-        Object.entries(query).every(([k, v]) => rec[k].toString().includes(v))
+    for (const i in queryParams) {
+      if (queryParams[i] === undefined) {
+        delete queryParams[i];
+      }
+    }
+
+    const filterArray = (array, filterObject) => {
+      return array.filter(item =>
+        Object.entries(filterObject).every(([key, value]) =>
+          item[key] ? item[key].toString().includes(value) : false
+        )
       );
+    }
 
-    const resultData = filterData(data.products, query);
-    
-    // Response 200
-    res.status(200).json({
-      status: 200,
-      message: "Successful",
-      data: resultData,
-      totalElements: resultData.length,
-    });
+    if (Object.keys(queryParams).length === 0) {
+      // Response 200
+      res.status(200).json({
+        status: 200,
+        message: "Successful",
+        data: dataProducts.products,
+        totalElements: dataProducts.products.length,
+      });
+    } else {
+      let resultData = filterArray(dataProducts.products, queryParams);
+      // Response 200
+      res.status(200).json({
+        status: 200,
+        message: "Successful",
+        data: resultData,
+        totalElements: resultData.length,
+      });
 
-       // // Response 500
-    // res.status(500).json({
-    //   status: 500,
-    //   message: "Error 500",
-    // }); 
+      // // Response 500
+      // res.status(500).json({
+        //   status: 500,
+        //   message: "Error 500",
+      // }); 
+    }
   }
+
+
 }
 
 export default productsController;

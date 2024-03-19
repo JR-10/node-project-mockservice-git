@@ -13,8 +13,8 @@ const response = {
       nameModule: 'Administración de la herramienta',
     },
     {
-        idState: '863dd07c-59f3-47a5-9afa-9f9fee152ba7',
-        nameState: 'Completo',
+      idState: '863dd07c-59f3-47a5-9afa-9f9fee152ba7',
+      nameState: 'Completo',
       idModule: '3e278074-55fb-4a38-a919-9a3ef4dd18aa',
       nameModule: 'Manejo de información de la calidad',
     },
@@ -36,18 +36,18 @@ const response = {
       idModule: '3e278074-55fb-4a38-a919-9a3ef4dd18aa',
       nameModule: 'Manejo de información de la calidad',
     },
-    {
-      idState: '6c07d8dd-ef23-40b0-9d02-008c8b20a385',
-      nameState: "Pendiente",
-      idModule: '3e278074-55fb-4a38-a919-9a3ef4dd18aa',
-      nameModule: 'Manejo de información de la calidad',
-    },
-    {
-      idState: '9ff5801a-5896-40e1-ac97-647848dbe7ae',
-      nameState: "Bloqueado",
-      idModule: '3e278074-55fb-4a38-a919-9a3ef4dd18aa',
-      nameModule: 'Manejo de información de la calidad',
-    },
+    // {
+    //   idState: '6c07d8dd-ef23-40b0-9d02-008c8b20a385',
+    //   nameState: "Pendiente",
+    //   idModule: '3e278074-55fb-4a38-a919-9a3ef4dd18aa',
+    //   nameModule: 'Manejo de información de la calidad',
+    // },
+    // {
+    //   idState: '9ff5801a-5896-40e1-ac97-647848dbe7ae',
+    //   nameState: "Bloqueado",
+    //   idModule: '3e278074-55fb-4a38-a919-9a3ef4dd18aa',
+    //   nameModule: 'Manejo de información de la calidad',
+    // },
   ],
 };
 
