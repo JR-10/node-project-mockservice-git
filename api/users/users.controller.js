@@ -1,6 +1,7 @@
 const dataUsers = require("./data/data-users");
 const dataImportUsers = require("./data/data-import-users");
 
+
 class usersController {
   /**
    * @description Metodo para obtener los usuarios (post)

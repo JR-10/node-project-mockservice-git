@@ -11,7 +11,7 @@ import RoutesGroups from "./api/groups/groups.routes";
 import RoutesDownloadGroup from "./api/download-group/download-group.routes";
 import RoutesPlantsProducts from "./api/plants-products/plants-products.routes";
 import RoutesParameters from "./api/parameters/parameters.routes";
-
+import RoutesModulesGic from "./api/modulesGic/modulesGic.routes";
 
 const app = express();
 
@@ -56,6 +56,8 @@ app.use("/gic/groups", RoutesGroups);
 app.use("/gic/reportGroups", RoutesDownloadGroup);
 app.use("/gic/plants-products", RoutesPlantsProducts);
 app.use("/gic/parameters", RoutesParameters);
+app.use("/gic/modules", RoutesModulesGic);
+
 
 
 // definicion del puerto
