@@ -6,7 +6,6 @@ class rolesController {
   static listRol(req, res) {
 
     const queryParamsRoles = req.query;
-    console.log('valor de los parametros de consulta: ', queryParamsRoles)
 
     if (Object.keys(queryParamsRoles).length === 0) {
       // Response 200
@@ -139,8 +138,6 @@ class rolesController {
 
     const idRole = req.params.idRole;
     const bodyUpdate = req.body;
-
-    console.log('@@@@', idRole);
 
     const userIndex = dataRoles.roles.findIndex((role) => role.idRole === idRole);
 

@@ -98,7 +98,6 @@ class usersController {
     }
 
     if (Object.keys(queryParams).length === 0) {
-      console.log('entra al if')
       const paginationSize = req.query.paginationSize || 10;
       const paginationKey = req.query.paginationKey || 0;
       const start = paginationSize * paginationKey;
@@ -124,7 +123,6 @@ class usersController {
       //   message: "Error 500",
       // });
     } else {
-      console.log('entra al else')
       const filterData = (data, query) =>
         data.filter((rec) =>
           Object.entries(query).every(([k, v]) => rec[k].toString().includes(v))
@@ -159,7 +157,6 @@ class usersController {
 
   static usersParameters(req, res) {
     const query = req.query;
-    console.log('####:', query);
 
     const filterData = (data, query) =>
       data.filter((rec) =>
@@ -233,7 +230,6 @@ class usersController {
   static getUsersImport(req, res) {
 
     const parameterQuery = req.query;
-    console.log('Parametros de consulta:', parameterQuery);
 
     // Response 200
     res.status(200).json({
@@ -253,7 +249,6 @@ class usersController {
   static saveUsersImport(req, res) {
 
     const parameterBody = req.body;
-    console.log('Parametros de Creacion:', parameterBody);
 
     // Response 200
     res.status(200).json({
