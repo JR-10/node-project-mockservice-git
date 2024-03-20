@@ -13,5 +13,4 @@ RoutesUsers.put("/updateUser/:ById", usersController.updateUser);
 RoutesUsers.get("/getUserImport", usersController.getUsersImport);
 RoutesUsers.post("/userImport", usersController.saveUsersImport);
 
-
 export default RoutesUsers;
