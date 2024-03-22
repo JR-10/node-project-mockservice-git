@@ -11,7 +11,8 @@ import RoutesGroups from "./api/groups/groups.routes";
 import RoutesDownloadGroup from "./api/download-group/download-group.routes";
 import RoutesPlantsProducts from "./api/plants-products/plants-products.routes";
 import RoutesModulesGic from "./api/modulesGic/modulesGic.routes";
-
+import RoutesDownloadPlantsProducts from "./api/download-plantsproducts/download-plantsproducts.routes";
+import RoutesDownloadParameters from "./api/download-parameters/download-parameters.routes";
 const app = express();
 
 // Peticiones con Body
@@ -55,6 +56,8 @@ app.use("/gic/groups", RoutesGroups);
 app.use("/gic/reportGroups", RoutesDownloadGroup);
 app.use("/gic/plants-products", RoutesPlantsProducts);
 app.use("/gic/modules", RoutesModulesGic);
+app.use("/gic/reportPlantsProducts", RoutesDownloadPlantsProducts);
+app.use("/gic/reportParameters", RoutesDownloadParameters);
 
 
 
